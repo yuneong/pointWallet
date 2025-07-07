@@ -79,11 +79,3 @@
 
 - `User (1)` ← `PointWallet (1)`
 - `PointWallet (1)` ← `PointCharge`, `PointUsage`, `PointHistory` (N)
-
----
-
-## 📌 비즈니스 규칙 요약
-
-- 포인트는 `PointCharge` 단위로 충전되며, 유효기간이 있음
-- 포인트 사용 시 FIFO 순으로 차감됨
-- 모든 변동 내역은 `PointHistory`에 기록되어 잔액 흐름 추적 가능
