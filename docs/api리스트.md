@@ -2,24 +2,24 @@
 
 ### 1. `사용자 포인트 지갑 생성`
 - POST
-- /api/v1/wallet
+- /api/wallet
 
 ### 2. `사용자 포인트 지갑 조회`
 - GET
-- /api/v1/wallet/{walletId}
+- /api/wallet/{walletId}
 
 ### 3. `사용자 포인트 충전`
 - POST
-- /api/v1/wallet/{walletId}/charge
+- /api/wallet/{walletId}/charge
 
 ### 4. `사용자 포인트 사용`
 - POST
-- /api/v1/wallet/{walletId}/usage
+- /api/wallet/{walletId}/usage
 
 ### 5. `포인트 내역 조회`
 - GET
-- /api/v1/wallet/{walletId}/history
+- /api/wallet/{walletId}/history
 
 ### 6. `지갑 잔액 조회`
 - GET
-- /api/v1/wallet/{walletId}/balance
+- /api/wallet/{walletId}/balance
