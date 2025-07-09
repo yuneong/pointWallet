@@ -64,14 +64,14 @@
 - 포인트 변동 통합 기록
 - 충전/사용/소멸 내역 조회용
 
-| 컬럼명 | 설명 |
-|--------|------|
-| `id` (PK) | 히스토리 ID |
+| 컬럼명              | 설명 |
+|------------------|------|
+| `id` (PK)        | 히스토리 ID |
 | `wallet_id` (FK) | 대상 지갑 |
-| `change_type` | CHARGE, USAGE, EXPIRE |
-| `amount` | 변동 금액 |
-| `related_after` | 변동 후 잔액 |
-| `created_at` | 기록 시각 |
+| `history_type`   | CHARGE, USAGE, EXPIRE |
+| `amount`         | 변동 금액 |
+| `related_after`  | 변동 후 잔액 |
+| `created_at`     | 기록 시각 |
 
 ---
 

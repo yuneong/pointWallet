@@ -1,7 +1,7 @@
 package com.study.pointwallet.presentation;
 
 import com.study.pointwallet.application.WalletService;
-import com.study.pointwallet.domain.Wallet;
+import com.study.pointwallet.domain.wallet.Wallet;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

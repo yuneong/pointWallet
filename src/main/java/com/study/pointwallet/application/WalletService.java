@@ -1,6 +1,6 @@
 package com.study.pointwallet.application;
 
-import com.study.pointwallet.domain.WalletRepository;
+import com.study.pointwallet.domain.wallet.WalletRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

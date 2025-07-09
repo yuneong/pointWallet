@@ -1,6 +1,6 @@
 package com.study.pointwallet.infra;
 
-import com.study.pointwallet.domain.WalletRepository;
+import com.study.pointwallet.domain.wallet.WalletRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
