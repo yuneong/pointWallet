@@ -10,6 +10,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.time.LocalDate;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 
@@ -38,4 +40,22 @@ class WalletServiceTest {
         Assertions.assertThat(result).isNotNull();
         Assertions.assertThat(command.getUserId()).isEqualTo(result.getUserId());
     }
+
+    @Test
+    @DisplayName("유저 ID에 따른 지갑 조회")
+    public void findWalletByUserId() {
+        // given
+        Long userId = 1L;
+        Wallet wallet = new Wallet(1L, userId, 100L, LocalDate.now());
+        given(walletRepository.findByUserId(any())).willReturn(wallet);
+
+        // when
+        FindWalletResult result = walletService.findWalletByUserId(userId);
+
+        // then
+        Assertions.assertThat(result).isNotNull();
+        Assertions.assertThat(result.getUserId()).isEqualTo(userId);
+        Assertions.assertThat(result.getWalletId()).isEqualTo(wallet.getId());
+    }
+
 }

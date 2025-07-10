@@ -11,12 +11,11 @@
 
 ### 2. `사용자 포인트 지갑 조회`
 - GET
-- /api/wallet/{walletId}
+- /api/wallet/{userId}
 - return
-    - walletId: 새로 생성된 지갑의 고유 ID
+    - walletId: 지갑의 고유 ID
     - userId: 지갑 소유 유저의 ID
-    - balance: 초기 포인트 잔액 (일반적으로 0)
-    - createdAt: 지갑 생성 시각
+    - balance: 포인트 잔액
 
 ### 3. `사용자 포인트 충전`
 - POST

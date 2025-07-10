@@ -22,4 +22,11 @@ public class WalletService {
         return new CreateWalletResult().fromDomain(savedWallet);
     }
 
+    public FindWalletResult findWalletByUserId(Long userId) {
+        // repository
+        Wallet wallet = walletRepository.findByUserId(userId);
+        // domain -> result
+        return new FindWalletResult().fromDomain(wallet);
+    }
+
 }

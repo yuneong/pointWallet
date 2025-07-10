@@ -4,4 +4,6 @@ public interface WalletRepository {
 
     Wallet save(Wallet wallet);
 
+    Wallet findByUserId(Long userId);
+
 }

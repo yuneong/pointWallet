@@ -2,6 +2,7 @@ package com.study.pointwallet.presentation;
 
 import com.study.pointwallet.application.CreateWalletCommand;
 import com.study.pointwallet.application.CreateWalletResult;
+import com.study.pointwallet.application.FindWalletResult;
 import com.study.pointwallet.application.WalletService;
 import com.study.pointwallet.domain.wallet.Wallet;
 import lombok.RequiredArgsConstructor;
@@ -31,12 +32,15 @@ public class WalletController {
 
     /**
      * 사용자 포인트 지갑 조회
-     * @param walletId
+     * @param userId
      * @return
      */
-    @GetMapping("/{walletId}")
-    public Wallet getWallet(@PathVariable Long walletId) {
-        return null;
+    @GetMapping("/{userId}")
+    public FindWalletResponse findWalletByUserId(@PathVariable Long userId) {
+        // service
+        FindWalletResult result = walletService.findWalletByUserId(userId);
+        // result -> response
+        return new FindWalletResponse().fromResult(result);
     }
 
     /**
