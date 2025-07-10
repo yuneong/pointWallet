@@ -1,5 +1,7 @@
 package com.study.pointwallet.presentation;
 
+import com.study.pointwallet.application.CreateWalletCommand;
+import com.study.pointwallet.application.CreateWalletResult;
 import com.study.pointwallet.application.WalletService;
 import com.study.pointwallet.domain.wallet.Wallet;
 import lombok.RequiredArgsConstructor;
@@ -14,12 +16,17 @@ public class WalletController {
 
     /**
      * 사용자 포인트 지갑 생성
-     * @param wallet
+     * @param request
      * @return
      */
     @PostMapping("/")
-    public Wallet createWallet(@RequestBody Wallet wallet) {
-        return null;
+    public CreateWalletResponse createWallet(@RequestBody CreateWalletRequest request) {
+        // request -> command
+        CreateWalletCommand command = request.toCommand();
+        // service
+        CreateWalletResult result = walletService.createWallet(command);
+        // result -> response
+        return new CreateWalletResponse().fromResult(result);
     }
 
     /**
