@@ -1,5 +1,6 @@
 package com.study.pointwallet.application;
 
+import com.study.pointwallet.domain.wallet.Charge;
 import com.study.pointwallet.domain.wallet.Wallet;
 import com.study.pointwallet.domain.wallet.WalletRepository;
 import jakarta.transaction.Transactional;
@@ -28,5 +29,22 @@ public class WalletService {
         // domain -> result
         return new FindWalletResult().fromDomain(wallet);
     }
+
+    public void chargeWallet(Long walletId, ChargeWalletCommand command) {
+        // command -> domain
+        Wallet wallet = walletRepository.findByWalletId(walletId);
+        wallet.charge(command);
+
+        // 변경 감지
+        Wallet savedWallet = walletRepository.save(wallet);
+
+        Charge charge = Charge.of(savedWallet, command.getAmount(), command.getReason());
+        // domain -> result
+        return;
+    }
+
+
+
+
 
 }

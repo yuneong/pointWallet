@@ -1,5 +1,6 @@
 package com.study.pointwallet.domain.wallet;
 
+import com.study.pointwallet.application.ChargeWalletCommand;
 import com.study.pointwallet.domain.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -42,5 +43,21 @@ public class Wallet {
                 .updatedAt(LocalDate.now())
                 .build();
     };
+
+    public Wallet charge(ChargeWalletCommand command) {
+        this.amount += command.getAmount();
+        this.updatedAt = LocalDate.now();
+        return this;
+    }
+
+
+
+
+
+
+
+
+
+
 
 }

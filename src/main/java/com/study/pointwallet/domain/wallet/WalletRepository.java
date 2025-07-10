@@ -6,4 +6,6 @@ public interface WalletRepository {
 
     Wallet findByUserId(Long userId);
 
+    Wallet findByWalletId(Long walletId);
+
 }

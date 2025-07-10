@@ -23,4 +23,9 @@ public class WalletRepositoryImpl implements WalletRepository {
                 .orElseThrow(() -> new EntityNotFoundException("User not found"));
     }
 
+    @Override
+    public Wallet findByWalletId(Long walletId) {
+        return jpaWalletRepository.findById(walletId)
+                .orElseThrow(() -> new EntityNotFoundException("Wallet not found"));
+    }
 }

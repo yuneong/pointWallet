@@ -1,9 +1,6 @@
 package com.study.pointwallet.presentation;
 
-import com.study.pointwallet.application.CreateWalletCommand;
-import com.study.pointwallet.application.CreateWalletResult;
-import com.study.pointwallet.application.FindWalletResult;
-import com.study.pointwallet.application.WalletService;
+import com.study.pointwallet.application.*;
 import com.study.pointwallet.domain.wallet.Wallet;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -46,11 +43,16 @@ public class WalletController {
     /**
      * 사용자 포인트 충전
      * @param walletId
-     * @param wallet
+     * @param request
      * @return
      */
     @PostMapping("/{walletId}/charge")
-    public Wallet charge(@PathVariable Long walletId, @RequestBody Wallet wallet) {
+    public ChargeWalletResponse charge(@PathVariable Long walletId, @RequestBody ChargeWalletRequest request) {
+        // request -> command
+        ChargeWalletCommand command = request.toCommand();
+        // service
+        walletService.chargeWallet(walletId, command);
+        // result -> response
         return null;
     }
 
