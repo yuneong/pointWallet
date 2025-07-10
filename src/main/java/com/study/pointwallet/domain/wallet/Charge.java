@@ -30,6 +30,15 @@ public class Charge {
     @Comment("만료 날짜")
     private LocalDate expiredAt;
 
+    // 📌 Q3
+    // Wallet 객체 자체를 받을 때
+    // walletId 로 받을 때
+    // 아래에 존재하는 of()의 쓰임이 어떻게 달라지는지?
+
+    // 📌 Q4
+    // 만료 날짜 expiredAt을 저장하는데
+    // 이 값은 저장하면서 임시로 정해줘도 되는건지?
+
     public Charge(Wallet wallet, Long amount, String reason, LocalDate expiredAt) {
         this.wallet = wallet;
         this.amount = amount;
